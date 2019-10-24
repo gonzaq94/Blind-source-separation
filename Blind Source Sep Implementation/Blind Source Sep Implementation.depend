@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1571912968 source:/homes/g18quint/Documents/Blind-source-separation/Blind Source Sep Implementation/separation_v0.c
+	<stdio.h>
+	<math.h>
+	"math_functions.h"
+
+1571908202 source:/homes/g18quint/Documents/Blind-source-separation/Blind Source Sep Implementation/SOBI.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<time.h>
+	"math_functions.h"
+	"separation_v0.h"
+
+1571911741 /homes/g18quint/Documents/Blind-source-separation/Blind Source Sep Implementation/math_functions.h
+
+1571899815 /homes/g18quint/Documents/Blind-source-separation/Blind Source Sep Implementation/separation_v0.h
+
+1571912913 source:/homes/g18quint/Documents/Blind-source-separation/Blind Source Sep Implementation/math_functions.c
+	<math.h>
+	<stdlib.h>
+
