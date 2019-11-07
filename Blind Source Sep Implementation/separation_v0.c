@@ -31,11 +31,7 @@ void separation_v0(double *input_1, double *input_2, double *output_1, double *o
     double a21 = beta*F12-T12*d1;
     double a22 = beta*F2-(T2-pow(sigma,2))*d2;
 
-    double A[2][2] = {{a11,a12},{a21,a22}};
-
     double detA = a11*a22-a12*a21;
-
-    double invA[2][2] = {{a22/detA,-a12/detA},{-a21/detA,a11/detA}};
 
     double maxAinv = max(a22/detA, -a12/detA, -a21/detA, a11/detA);
 
@@ -43,30 +39,20 @@ void separation_v0(double *input_1, double *input_2, double *output_1, double *o
 
     double row2_invA[2] = {-a21/(detA*maxAinv),a11/(detA*maxAinv)};
 
-    output_1 = product_A_input(row1_invA, input_1, input_2, nb_samples);
 
-    output_2 = product_A_input(row2_invA, input_1, input_2, nb_samples);
+    double *output_1_aux = product_A_input(row1_invA, input_1, input_2, nb_samples);
 
-    printf("%lf",A[0][0]);
-    printf("   ");
-    printf("%lf",A[0][1]);
-    printf("\n");
-    printf("%lf",A[1][0]);
-    printf("   ");
-    printf("%lf",A[1][1]);
+    double *output_2_aux = product_A_input(row2_invA, input_1, input_2, nb_samples);
+
 
     int i;
 
     for(i=0;i<nb_samples;i++){
 
-        printf("%lf", output_1[i]);
-        printf("\n");
+        output_1[i] = output_1_aux[i];
+
+        output_2[i] = output_2_aux[i];
+
     }
-
-
-
-
-
-    //FREE ALL THE MEMORY
 
 }

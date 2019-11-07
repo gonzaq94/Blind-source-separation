@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 double dot_product(double *reference_1,double *output_1,int nb_samples){
 
@@ -142,9 +143,6 @@ double **corr(double *x1, double *x2, int vector_size, int wdw_size){
             free(x2_windowed);
 
             free(aux);
-
-            // FREE MEMORY
-
     }
 
     divide_matrix(K,nb_it,wdw_size);
